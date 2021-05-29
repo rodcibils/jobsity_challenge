@@ -4,6 +4,7 @@ interface MainContract {
     interface ViewContract {
         fun updateRecyclerView()
         fun showError()
+        fun showLoading()
     }
 
     interface PresenterContract {

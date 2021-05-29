@@ -15,8 +15,18 @@ class ShowsAdapter(
     private val shows: MutableList<Show>
 ):  RecyclerView.Adapter<ShowsAdapter.ViewHolder>() {
 
+    enum class LayoutType {
+        SHOW,
+        LOADING
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_show, parent, false)
+        val view = if(viewType == LayoutType.SHOW.ordinal) {
+            LayoutInflater.from(parent.context).inflate(R.layout.layout_show, parent, false)
+        } else {
+            LayoutInflater.from(parent.context).inflate(R.layout.layout_loading, parent, false)
+        }
+
         return ViewHolder(view, parent.context)
     }
 
@@ -25,7 +35,16 @@ class ShowsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(shows[position])
+        if(shows[position].id >= 0) {
+            holder.bind(shows[position])
+        }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        if(shows[position].id < 0) {
+            return LayoutType.LOADING.ordinal
+        }
+        return LayoutType.SHOW.ordinal
     }
 
     class ViewHolder(

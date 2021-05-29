@@ -5,5 +5,5 @@ import java.io.Serializable
 
 data class ApiShowImage(
     @SerializedName("medium")
-    val medium: String
+    val medium: String?
 ): Serializable

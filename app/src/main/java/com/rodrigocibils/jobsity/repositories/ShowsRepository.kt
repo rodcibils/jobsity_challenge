@@ -23,10 +23,19 @@ class ShowsRepository {
                         val newShow = Show(
                             curShow.id,
                             curShow.name,
-                            curShow.image.medium
+                            curShow.image?.medium ?: ""
                         )
 
                         shows.add(newShow)
+                    }
+
+                    if(body.isNotEmpty()) {
+                        val loadingDummy = Show(
+                            -1,
+                            "",
+                            ""
+                        )
+                        shows.add(loadingDummy)
                     }
 
                     successCallback(shows.toList())

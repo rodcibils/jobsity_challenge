@@ -11,6 +11,6 @@ data class ApiShow(
     val name: String,
 
     @SerializedName("image")
-    val image: ApiShowImage
+    val image: ApiShowImage?
 
 ): Serializable

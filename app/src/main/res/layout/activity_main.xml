@@ -38,10 +38,33 @@
             android:src="@drawable/ic_baseline_error_outline_24" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/error_msg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainActivityLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loading_msg" />
 
     </LinearLayout>
 
