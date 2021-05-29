@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Jobsity</string>
+    <string name="error">Error</string>
+    <string name="error_msg">Oops, we had an error. Please retry.</string>
 </resources>
