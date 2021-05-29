@@ -7,4 +7,110 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="InfoScreen" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="InfoIcon" parent="AppTheme">
+        <item name="android:layout_width">@dimen/info_icon_size</item>
+        <item name="android:layout_height">@dimen/info_icon_size</item>
+        <item name="android:layout_marginBottom">@dimen/margin</item>
+    </style>
+
+    <style name="InfoText" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginStart">@dimen/margin</item>
+        <item name="android:layout_marginEnd">@dimen/margin</item>
+        <item name="android:textSize">@dimen/info_text_size</item>
+    </style>
+
+    <style name="RowContent" parent="AppTheme">
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:paddingTop">@dimen/margin</item>
+        <item name="android:paddingBottom">@dimen/margin</item>
+    </style>
+
+    <style name="Image" parent="AppTheme">
+        <item name="srcCompat">@drawable/ic_baseline_image_24</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="ScreenShowImage" parent="Image">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">@dimen/large_poster_width</item>
+        <item name="android:layout_height">@dimen/large_poster_height</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+    </style>
+
+    <style name="ScreenEpisodeImage" parent="ScreenShowImage">
+        <item name="android:layout_width">@dimen/episode_image_width</item>
+        <item name="android:layout_height">@dimen/episode_image_height</item>
+    </style>
+
+    <style name="ScreenText" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginStart">@dimen/margin</item>
+        <item name="android:layout_marginEnd">@dimen/margin</item>
+        <item name="android:layout_marginTop">@dimen/short_margin</item>
+    </style>
+
+    <style name="ScreenTitleText" parent="ScreenText">
+        <item name="android:textSize">@dimen/title_size</item>
+    </style>
+
+    <style name="ScreenSecondaryInfoText" parent="ScreenText">
+        <item name="android:textSize">@dimen/secondary_info_size</item>
+    </style>
+
+    <style name="ScreenSummaryText" parent="ScreenText">
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:textSize">@dimen/summary_size</item>
+    </style>
+
+    <style name="ScreenEpisodeList" parent="AppTheme">
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/episode_list_height</item>
+    </style>
+
+    <style name="RowShowImage" parent="Image">
+        <item name="android:layout_width">@dimen/small_poster_width</item>
+        <item name="android:layout_height">@dimen/small_poster_height</item>
+    </style>
+
+    <style name="RowEpisodeImage" parent="Image">
+        <item name="android:layout_width">@dimen/small_episode_width</item>
+        <item name="android:layout_height">@dimen/small_episode_height</item>
+    </style>
+
+    <style name="RowTitle" parent="AppTheme">
+        <item name="android:layout_marginStart">@dimen/margin</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">@dimen/row_title</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="RowEpisodeTitle" parent="RowTitle">
+        <item name="android:textSize">@dimen/episode_title</item>
+    </style>
+
+    <style name="RowSeasonTitle" parent="RowTitle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/season_title</item>
+    </style>
+
+    <style name="RowDivider" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
 </resources>

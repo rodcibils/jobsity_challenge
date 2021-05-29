@@ -73,8 +73,7 @@ class ShowActivity : AppCompatActivity(), ShowContract.ViewContract {
         }
 
         binding.showActivityName.text = show.name
-        binding.showActivityGenres.text =
-            String.format(resources.getString(R.string.genre), show.genres.joinToString(", "))
+        binding.showActivityGenres.text = show.genres.joinToString(", ")
         binding.showActivitySchedule.text =
             String.format(resources.getString(R.string.schedule), show.days.joinToString(", "), show.time)
         binding.showActivitySummary.text = Html.fromHtml(show.summary, Html.FROM_HTML_MODE_COMPACT)

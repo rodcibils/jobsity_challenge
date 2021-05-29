@@ -21,34 +21,31 @@
 
             <ImageView
                 android:id="@+id/showActivityPoster"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                style="@style/ScreenShowImage" />
 
             <TextView
                 android:id="@+id/showActivityName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenTitleText"
+                tools:text="Show Name"/>
 
             <TextView
                 android:id="@+id/showActivitySchedule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenSecondaryInfoText"
+                tools:text="Every Monday at 00:00 hs." />
 
             <TextView
                 android:id="@+id/showActivityGenres"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenSecondaryInfoText"
+                tools:text="Comedy, Drama" />
 
             <TextView
                 android:id="@+id/showActivitySummary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenSummaryText"
+                tools:text="This is the summary of the show" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/showActivityRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                style="@style/ScreenEpisodeList" />
 
             <LinearLayout
                 android:id="@+id/showActivityEpisodesLoading"

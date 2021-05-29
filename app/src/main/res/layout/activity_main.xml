@@ -19,37 +19,28 @@
 
     <LinearLayout
         android:id="@+id/mainActivityErrorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
+        style="@style/InfoScreen"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/icon_height"
+            style="@style/InfoIcon"
             android:contentDescription="@string/error"
             android:src="@drawable/ic_baseline_error_outline_24" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InfoText"
             android:text="@string/error_msg" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/mainActivityLoadingLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
+        style="@style/InfoScreen"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,22 +49,17 @@
 
 
         <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/icon_height" />
+            style="@style/InfoIcon" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InfoText"
             android:text="@string/loading_msg" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/mainActivityNoResultsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
+        style="@style/InfoScreen"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,8 +67,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InfoText"
             android:text="@string/no_results" />
 
     </LinearLayout>

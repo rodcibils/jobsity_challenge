@@ -21,24 +21,22 @@
 
             <ImageView
                 android:id="@+id/showEpisodeImage"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                style="@style/ScreenEpisodeImage" />
 
             <TextView
                 android:id="@+id/showEpisodeName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenTitleText"
+                tools:text="Episode Name" />
 
             <TextView
                 android:id="@+id/showEpisodeDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenSecondaryInfoText"
+                tools:text="These are episode details" />
 
             <TextView
                 android:id="@+id/showEpisodeSummary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                style="@style/ScreenSummaryText"
+                tools:text="This is a summary of the episode" />
 
         </LinearLayout>
     </ScrollView>

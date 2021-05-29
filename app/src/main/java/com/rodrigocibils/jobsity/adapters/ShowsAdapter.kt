@@ -60,7 +60,7 @@ class ShowsAdapter(
 
             show.imageUrl?.let {
                 val requestManager = Glide.with(context)
-                val requestBuilder = requestManager.load(show.imageUrl).placeholder(R.drawable.ic_launcher_foreground)
+                val requestBuilder = requestManager.load(show.imageUrl).placeholder(R.drawable.ic_baseline_image_24)
                 requestBuilder.into(image)
             }
 

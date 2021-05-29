@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="icon_height">80dp</dimen>
-    <dimen name="show_item_divider_height">1dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="small_poster_width">70dp</dimen>
+    <dimen name="small_poster_height">80dp</dimen>
+    <dimen name="small_episode_width">70dp</dimen>
+    <dimen name="small_episode_height">45dp</dimen>
+    <dimen name="row_title">24sp</dimen>
+    <dimen name="episode_title">16sp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="info_icon_size">80dp</dimen>
+    <dimen name="info_text_size">24sp</dimen>
+    <dimen name="season_separator_height">48dp</dimen>
+    <dimen name="season_title">26sp</dimen>
+    <dimen name="large_poster_width">250dp</dimen>
+    <dimen name="large_poster_height">300dp</dimen>
+    <dimen name="title_size">32sp</dimen>
+    <dimen name="secondary_info_size">20sp</dimen>
+    <dimen name="summary_size">16sp</dimen>
+    <dimen name="short_margin">5dp</dimen>
+    <dimen name="episode_list_height">300dp</dimen>
+    <dimen name="episode_image_width">250dp</dimen>
+    <dimen name="episode_image_height">150dp</dimen>
 </resources>

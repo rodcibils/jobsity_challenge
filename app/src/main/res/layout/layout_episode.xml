@@ -7,31 +7,28 @@
 
 
     <LinearLayout
+        style="@style/RowContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/episodeImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            style="@style/RowEpisodeImage"
+            android:layout_weight="0" />
 
         <TextView
             android:id="@+id/episodeName"
+            style="@style/RowEpisodeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             tools:text="Episode 1: Episode Name" />
 
     </LinearLayout>
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/show_item_divider_height"
-        android:background="@color/colorPrimary"
+        style="@style/RowDivider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
