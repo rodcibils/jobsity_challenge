@@ -2,12 +2,11 @@ package com.rodrigocibils.jobsity.models
 
 import java.io.Serializable
 
-data class Show(
+data class Episode(
     val id: Int,
     val name: String,
-    val mediumImageUrl: String,
+    val season: Int,
+    val number: Int,
     val summary: String,
-    val time: String,
-    val days: List<String>,
-    val genres: List<String>
+    val imageUrl: String?
 ): Serializable

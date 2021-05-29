@@ -2,24 +2,24 @@ package com.rodrigocibils.jobsity.presenters
 
 import com.rodrigocibils.jobsity.contracts.MainContract
 import com.rodrigocibils.jobsity.models.Show
-import com.rodrigocibils.jobsity.usecases.SearchShowsUseCase
+import com.rodrigocibils.jobsity.usecases.GetShowsUseCase
 
 class MainPresenter(
     private val view: MainContract.ViewContract,
     private val shows: MutableList<Show>
 ): MainContract.PresenterContract {
 
-    private val searchShowsUseCase = SearchShowsUseCase()
+    private val getShowsUseCase = GetShowsUseCase()
 
     override fun searchShows(page: Int) {
         if(page == 0) {
             shows.clear()
             view.showLoading()
         }
-        searchShowsUseCase.searchShows(page, ::onSearchShowsSuccess, ::onSearchShowsError)
+        getShowsUseCase.searchShows(page, ::onGetShowsSuccess, ::onGetShowsError)
     }
 
-    private fun onSearchShowsSuccess(newShows: List<Show>) {
+    private fun onGetShowsSuccess(newShows: List<Show>) {
         cleanupLoadingDummies()
         shows.addAll(newShows)
         view.updateRecyclerView()
@@ -36,7 +36,7 @@ class MainPresenter(
         }
     }
 
-    private fun onSearchShowsError() {
+    private fun onGetShowsError() {
         view.showError()
     }
 }

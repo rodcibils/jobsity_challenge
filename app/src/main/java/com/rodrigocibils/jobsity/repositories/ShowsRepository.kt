@@ -9,12 +9,12 @@ import retrofit2.Response
 
 class ShowsRepository {
 
-    fun searchShows(
+    fun getShows(
         page: Int,
         successCallback: (List<Show>)->Unit,
         errorCallback: ()->Unit
     ) {
-        ApiClient.apiService.searchShows(page).enqueue(object: Callback<List<ApiShow>> {
+        ApiClient.apiService.getShows(page).enqueue(object: Callback<List<ApiShow>> {
             override fun onResponse(call: Call<List<ApiShow>>, response: Response<List<ApiShow>>) {
                 val shows = mutableListOf<Show>()
                 val body = response.body() as? List<ApiShow>
@@ -23,7 +23,11 @@ class ShowsRepository {
                         val newShow = Show(
                             curShow.id,
                             curShow.name,
-                            curShow.image?.medium ?: ""
+                            curShow.image?.medium ?: "",
+                            curShow.summary,
+                            curShow.schedule.time,
+                            curShow.schedule.days,
+                            curShow.genres
                         )
 
                         shows.add(newShow)
@@ -33,7 +37,11 @@ class ShowsRepository {
                         val loadingDummy = Show(
                             -1,
                             "",
-                            ""
+                            "",
+                            "",
+                            "",
+                            emptyList(),
+                            emptyList()
                         )
                         shows.add(loadingDummy)
                     }

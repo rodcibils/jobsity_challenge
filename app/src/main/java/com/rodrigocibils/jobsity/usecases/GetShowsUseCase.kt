@@ -3,7 +3,7 @@ package com.rodrigocibils.jobsity.usecases
 import com.rodrigocibils.jobsity.models.Show
 import com.rodrigocibils.jobsity.repositories.ShowsRepository
 
-class SearchShowsUseCase {
+class GetShowsUseCase {
 
     private val repository = ShowsRepository()
 
@@ -12,6 +12,6 @@ class SearchShowsUseCase {
         successCallback: (List<Show>)->Unit,
         errorCallback: ()->Unit
     ) {
-        repository.searchShows(page, successCallback, errorCallback)
+        repository.getShows(page, successCallback, errorCallback)
     }
 }

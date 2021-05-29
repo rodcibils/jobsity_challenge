@@ -3,22 +3,22 @@ package com.rodrigocibils.jobsity.models.net
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class ApiShow(
+data class ApiEpisode(
     @SerializedName("id")
     val id: Int,
 
     @SerializedName("name")
     val name: String,
 
-    @SerializedName("image")
-    val image: ApiImage?,
+    @SerializedName("season")
+    val season: Int,
 
-    @SerializedName("genres")
-    val genres: List<String>,
-
-    @SerializedName("schedule")
-    val schedule: ApiSchedule,
+    @SerializedName("number")
+    val number: Int,
 
     @SerializedName("summary")
-    val summary: String
+    val summary: String,
+
+    @SerializedName("image")
+    val image: ApiImage?
 ): Serializable

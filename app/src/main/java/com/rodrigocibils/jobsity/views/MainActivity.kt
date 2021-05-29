@@ -1,5 +1,6 @@
 package com.rodrigocibils.jobsity.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -48,19 +49,21 @@ class MainActivity : AppCompatActivity(), MainContract.ViewContract {
         presenter = MainPresenter(this, shows)
 
         setupRecyclerView()
-    }
-
-    override fun onStart() {
-        super.onStart()
         presenter.searchShows(page)
     }
 
     private fun setupRecyclerView() {
         binding.mainActivityRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ShowsAdapter(shows)
+            adapter = ShowsAdapter(shows, ::goToShowInfo)
         }
         binding.mainActivityRecyclerView.addOnScrollListener(scrollListener)
+    }
+
+    private fun goToShowInfo(show: Show) {
+        val intent = Intent(this, ShowActivity::class.java)
+        intent.putExtra("show", show)
+        startActivity(intent)
     }
 
     private fun hideAll() {

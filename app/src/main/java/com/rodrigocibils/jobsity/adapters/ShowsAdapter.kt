@@ -12,7 +12,8 @@ import com.rodrigocibils.jobsity.R
 import com.rodrigocibils.jobsity.models.Show
 
 class ShowsAdapter(
-    private val shows: MutableList<Show>
+    private val shows: MutableList<Show>,
+    private val callback: (Show)->Unit
 ):  RecyclerView.Adapter<ShowsAdapter.ViewHolder>() {
 
     enum class LayoutType {
@@ -36,7 +37,7 @@ class ShowsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(shows[position].id >= 0) {
-            holder.bind(shows[position])
+            holder.bind(shows[position], callback)
         }
     }
 
@@ -52,14 +53,18 @@ class ShowsAdapter(
         private val context: Context
     ): RecyclerView.ViewHolder(view) {
 
-        fun bind(show: Show){
+        fun bind(show: Show, callback: (Show) -> Unit){
             val image: ImageView = view.findViewById(R.id.layoutShowImage)
             val name: TextView = view.findViewById(R.id.layoutShowName)
             name.text = show.name
 
             val requestManager = Glide.with(context)
-            val requestBuilder = requestManager.load(show.imageUrl).placeholder(R.drawable.ic_launcher_foreground)
+            val requestBuilder = requestManager.load(show.mediumImageUrl).placeholder(R.drawable.ic_launcher_foreground)
             requestBuilder.into(image)
+
+            view.setOnClickListener {
+                callback(show)
+            }
         }
     }
 }

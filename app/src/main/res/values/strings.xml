@@ -3,4 +3,9 @@
     <string name="error">Error</string>
     <string name="error_msg">Oops, we had an error. Please retry.</string>
     <string name="loading_msg">Loading…</string>
+    <string name="genre">Genre: %s</string>
+    <string name="schedule">Every %s at %s hs.</string>
+    <string name="show_details">Show Details</string>
+    <string name="season">Season %d</string>
+    <string name="episode">Episode %d: %s</string>
 </resources>
