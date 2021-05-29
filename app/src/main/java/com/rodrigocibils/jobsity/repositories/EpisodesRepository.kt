@@ -53,7 +53,7 @@ class EpisodesRepository {
                             curEpisode.name,
                             curEpisode.season,
                             curEpisode.number,
-                            curEpisode.summary,
+                            curEpisode.summary ?: "",
                             curEpisode.image?.medium
                         )
 

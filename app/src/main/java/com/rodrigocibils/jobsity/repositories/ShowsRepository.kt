@@ -25,7 +25,7 @@ class ShowsRepository {
                             curShow.id,
                             curShow.name,
                             curShow.image?.medium,
-                            curShow.summary,
+                            curShow.summary ?: "",
                             curShow.schedule.time,
                             curShow.schedule.days,
                             curShow.genres
@@ -78,7 +78,7 @@ class ShowsRepository {
                             curShow.id,
                             curShow.name,
                             curShow.image?.medium,
-                            curShow.summary,
+                            curShow.summary ?: "",
                             curShow.schedule.time,
                             curShow.schedule.days,
                             curShow.genres

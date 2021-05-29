@@ -20,5 +20,5 @@ data class ApiShow(
     val schedule: ApiSchedule,
 
     @SerializedName("summary")
-    val summary: String
+    val summary: String?
 ): Serializable

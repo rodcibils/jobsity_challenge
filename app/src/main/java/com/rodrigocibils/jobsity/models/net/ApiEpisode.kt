@@ -17,7 +17,7 @@ data class ApiEpisode(
     val number: Int,
 
     @SerializedName("summary")
-    val summary: String,
+    val summary: String?,
 
     @SerializedName("image")
     val image: ApiImage?
