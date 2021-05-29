@@ -66,9 +66,11 @@ class ShowActivity : AppCompatActivity(), ShowContract.ViewContract {
     }
 
     private fun setupView(show: Show) {
-        val requestManager = Glide.with(this)
-        val requestBuilder = requestManager.load(show.mediumImageUrl).placeholder(R.drawable.ic_launcher_foreground)
-        requestBuilder.into(binding.showActivityPoster)
+        show.imageUrl?.let {
+            val requestManager = Glide.with(this)
+            val requestBuilder = requestManager.load(show.imageUrl).placeholder(R.drawable.ic_launcher_foreground)
+            requestBuilder.into(binding.showActivityPoster)
+        }
 
         binding.showActivityName.text = show.name
         binding.showActivityGenres.text =

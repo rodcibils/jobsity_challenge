@@ -23,7 +23,7 @@ class ShowsRepository {
                         val newShow = Show(
                             curShow.id,
                             curShow.name,
-                            curShow.image?.medium ?: "",
+                            curShow.image?.medium,
                             curShow.summary,
                             curShow.schedule.time,
                             curShow.schedule.days,
@@ -37,7 +37,7 @@ class ShowsRepository {
                         val loadingDummy = Show(
                             -1,
                             "",
-                            "",
+                            null,
                             "",
                             "",
                             emptyList(),

@@ -5,7 +5,7 @@ import java.io.Serializable
 data class Show(
     val id: Int,
     val name: String,
-    val mediumImageUrl: String,
+    val imageUrl: String?,
     val summary: String,
     val time: String,
     val days: List<String>,
