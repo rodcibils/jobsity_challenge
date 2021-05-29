@@ -1,6 +1,7 @@
 package com.rodrigocibils.jobsity.repositories
 
 import com.rodrigocibils.jobsity.models.Show
+import com.rodrigocibils.jobsity.models.net.ApiSearch
 import com.rodrigocibils.jobsity.models.net.ApiShow
 import com.rodrigocibils.jobsity.net.ApiClient
 import retrofit2.Call
@@ -58,4 +59,43 @@ class ShowsRepository {
         })
     }
 
+    fun getShows(
+        query: String,
+        successCallback: (List<Show>) -> Unit,
+        errorCallback: () -> Unit
+    ) {
+        ApiClient.apiService.getShows(query).enqueue(object: Callback<List<ApiSearch>>{
+            override fun onResponse(
+                call: Call<List<ApiSearch>>,
+                response: Response<List<ApiSearch>>
+            ) {
+                val shows = mutableListOf<Show>()
+                val body = response.body()
+                if(body != null) {
+                    body.forEach { curSearch ->
+                        val curShow = curSearch.show
+                        val newShow = Show(
+                            curShow.id,
+                            curShow.name,
+                            curShow.image?.medium,
+                            curShow.summary,
+                            curShow.schedule.time,
+                            curShow.schedule.days,
+                            curShow.genres
+                        )
+
+                        shows.add(newShow)
+                    }
+
+                    successCallback(shows.toList())
+                } else {
+                    errorCallback()
+                }
+            }
+
+            override fun onFailure(call: Call<List<ApiSearch>>, t: Throwable) {
+                errorCallback()
+            }
+        })
+    }
 }

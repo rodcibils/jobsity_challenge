@@ -5,9 +5,11 @@ interface MainContract {
         fun updateRecyclerView()
         fun showError()
         fun showLoading()
+        fun showNoResults()
     }
 
     interface PresenterContract {
-        fun searchShows(page: Int)
+        fun getShows(page: Int)
+        fun getShows(query: String)
     }
 }

@@ -7,11 +7,19 @@ class GetShowsUseCase {
 
     private val repository = ShowsRepository()
 
-    fun searchShows(
+    fun getShows(
         page: Int,
         successCallback: (List<Show>)->Unit,
         errorCallback: ()->Unit
     ) {
         repository.getShows(page, successCallback, errorCallback)
+    }
+
+    fun getShows(
+        query: String,
+        successCallback: (List<Show>) -> Unit,
+        errorCallback: () -> Unit
+    ) {
+        repository.getShows(query, successCallback, errorCallback)
     }
 }

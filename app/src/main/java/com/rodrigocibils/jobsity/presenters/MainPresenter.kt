@@ -11,18 +11,33 @@ class MainPresenter(
 
     private val getShowsUseCase = GetShowsUseCase()
 
-    override fun searchShows(page: Int) {
+    override fun getShows(page: Int) {
         if(page == 0) {
             shows.clear()
             view.showLoading()
         }
-        getShowsUseCase.searchShows(page, ::onGetShowsSuccess, ::onGetShowsError)
+        getShowsUseCase.getShows(page, ::onGetShowsSuccess, ::onGetShowsError)
+    }
+
+    override fun getShows(query: String) {
+        shows.clear()
+        view.showLoading()
+        getShowsUseCase.getShows(query, ::onGetShowsSearchSuccess, ::onGetShowsError)
     }
 
     private fun onGetShowsSuccess(newShows: List<Show>) {
         cleanupLoadingDummies()
         shows.addAll(newShows)
         view.updateRecyclerView()
+    }
+
+    private fun onGetShowsSearchSuccess(foundShows: List<Show>) {
+        if(foundShows.isNotEmpty()) {
+            shows.addAll(foundShows)
+            view.updateRecyclerView()
+        } else {
+            view.showNoResults()
+        }
     }
 
     private fun cleanupLoadingDummies() {

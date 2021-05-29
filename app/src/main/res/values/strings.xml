@@ -10,4 +10,6 @@
     <string name="season">Season %d</string>
     <string name="episode">Episode %d: %s</string>
     <string name="number_and_season">Season %d, Episode %d</string>
+    <string name="search_hint">Search…</string>
+    <string name="no_results">No results found for that entry</string>
 </resources>
