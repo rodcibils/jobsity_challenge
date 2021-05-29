@@ -20,7 +20,7 @@ class EpisodesRepository {
                 response: Response<List<ApiEpisode>>
             ) {
                 val episodes = mutableListOf<Episode>()
-                val body = response.body() as? List<ApiEpisode>
+                val body = response.body()
                 if(body != null) {
                     var seasonSeparator = Episode(
                         -1,
