@@ -1,5 +1,6 @@
 package com.rodrigocibils.jobsity.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
@@ -51,7 +52,9 @@ class ShowActivity : AppCompatActivity(), ShowContract.ViewContract {
     }
 
     private fun goToEpisodeInfo(episode: Episode) {
-        //TODO: not implemented yet
+        val intent = Intent(this, EpisodeActivity::class.java)
+        intent.putExtra("episode", episode)
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -6,6 +6,8 @@
     <string name="genre">Genre: %s</string>
     <string name="schedule">Every %s at %s hs.</string>
     <string name="show_details">Show Details</string>
+    <string name="episode_details">Episode Details</string>
     <string name="season">Season %d</string>
     <string name="episode">Episode %d: %s</string>
+    <string name="number_and_season">Season %d, Episode %d</string>
 </resources>
