@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity(), MainContract.ViewContract {
 
                 override fun onQueryTextChange(query: String?): Boolean {
                     if(query == null || query == "") {
+                        resetEndlessScrolling()
                         page = 0
                         presenter.getShows(page)
                     }
